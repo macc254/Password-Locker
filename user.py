@@ -16,5 +16,14 @@ class User:
         
         User.user_list.append(self)
         
-    
+    @classmethod
+    def delete_user(cls,number):
+        '''
+        delete_user method deletes user objects from user_list
+        '''
+        for user in cls.user_list:
+            if user.id == number:
+                return user.user_list.remove(number) 
+            
+               
     
