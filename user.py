@@ -4,8 +4,8 @@ class User:
     """
     user_list = [] #empty  user user_list
     
-    def __init__(self,id,first_name,last_name)
-        self.id = id
+    def __init__(self,userId,first_name,last_name):
+        self.userId = userId
         self.first_name = first_name
         self.last_name = last_name
         
