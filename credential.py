@@ -24,5 +24,18 @@ class Credential:
             if credential.accountId == number:
                 return credential.credential_list.remove(number)
             
+    @classmethod
+    def get_credential(cls,number):
+        '''
+        This is  a method that returns a credential that matches the number entered
+        Args:
+            number: The accountId of the credential
+        Return:
+            Account that matches the number entered
+        '''
+        for credential in cls.credential_list:
+            if credential.accountId == number:
+                return credential
+            
                   
         
