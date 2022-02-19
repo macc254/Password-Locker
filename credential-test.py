@@ -13,6 +13,8 @@ class TestCredential(unittest.TestCase):
         self.assertEqual(self.new_credential.username,"fachelan")
         self.assertEqual(self.new_credential.password,"1234")
         
+    
+        
 if __name__ == '__main__':
     unittest.main()
         
