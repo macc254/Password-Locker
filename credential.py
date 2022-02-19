@@ -4,7 +4,7 @@ class Credential:
     '''
     credential_list = [] #empty credentials list  for the accounts
     
-    def __init__(self,userId, account,username,password):
+    def __init__(self, accountId, account,username,password):
         self.accountId = accountId
         self.account = account
         self.username = username

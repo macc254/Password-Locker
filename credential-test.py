@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import unittest
 from credential import Credential
 
 class TestCredential(unittest.TestCase):
@@ -11,4 +12,7 @@ class TestCredential(unittest.TestCase):
         self.assertEqual(self.new_credential.account,"Facebook")
         self.assertEqual(self.new_credential.username,"fachelan")
         self.assertEqual(self.new_credential.password,"1234")
+        
+if __name__ == '__main__':
+    unittest.main()
         
