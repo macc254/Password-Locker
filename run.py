@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import random
+import string
 from user import User
 from credential import Credential
 
@@ -48,11 +50,11 @@ def main():
     print('\n')
     
     while True:
-            print("Use these short codes : \n nu- create a new user,\n dc - display credentials,\n fc -find a credential,\n dl - delete a credential,\n ex -exit the Password Locker")
+            print("Enter these short codes : \n su- To signup a new user,\n lg - To login, \n dc - display credentials,\n fc -find a credential,\n dl - delete a credential,\n ex -exit the Password Locker")
 
             short_code = input().lower()
 
-            if short_code == 'nu':
+            if short_code == 'su':
                     print("New User")
                     print("-"*10)
                     
@@ -75,7 +77,35 @@ def main():
                     print ('\n')
                     print(f"New Password Locker for {fname} {lname} created")
                     print ('\n')
+                    print(f"Name: {fname} {lname} \n Username:{username} \n Password:{password}")
+                    print ('\n')
                     
+            elif short_code == 'lg':
+                print ("Enter your username")
+                loginUsername = input()
+                print ("Enter your password")
+                loginPassword = input()
+                if find_user_by_password(loginPassword):
+                    print ("Welcome!!")
+                    print ('\n')
+                    print ("Would you like to create accounts? Enter - ca, \n or view accounts, Enter -va")
+                    if short_code == 'ca':
+                        print ("Create an account:")
+                        print ('\n')
+                        print ("Enter the Account Name:")
+                        accountname = input()
+                        print ("Your username is:")
+                        accountUsername = loginUsername
+                        print ('\n')
+                        print ("Enter:\n gp - if you would like a generated password, \n Or ip - if you would like to input your own password")
+                        if short_code == 'gp':
+                            
+
+                        
+
+                        
+
+
 if __name__ == '__main__':
 
     main()

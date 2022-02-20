@@ -43,7 +43,7 @@ class UserTest(unittest.TestCase):
         '''
         self.assertEqual(User.display_user(),User.user_list)
         
-    def test_find_user_by_id(self):
+    def test_find_user_by_password(self):
         '''
         test to find users by the specified userId
         '''
@@ -51,9 +51,8 @@ class UserTest(unittest.TestCase):
         test_user = User("002","Joan","Muteti","jm","44444") # A new user 
         test_user.save_user()
         
-        found_user = User.find_user_by_number("002")
-        self.assertEqual(test_user.userId, found_user.userId)
-        
+        found_user = User.find_user_by_password("44444")
+        self.assertEqual(test_user.password,found_user.password) 
     
     def test_check_user_exists(self):
         '''

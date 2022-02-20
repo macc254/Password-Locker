@@ -31,12 +31,12 @@ class User:
         return cls.user_list
                
     @classmethod
-    def find_user_by_number(cls,number):
+    def find_user_by_password(cls,number):
         '''
         find user by number will return the corresponding user of the number given
         '''
         for user in cls.user_list:
-            if user.userId == number:
+            if user.password == number:
                 return user
     
     @classmethod
