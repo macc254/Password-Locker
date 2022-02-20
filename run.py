@@ -94,9 +94,10 @@ def main():
                 print ("Enter your password")
                 loginPassword = input()
                 if find_user_by_password(loginPassword):
-                    print ("Welcome!!")
-                    print ('\n')
+                    print (f"Welcome {loginUsername}")
                     print ("To create a new account,Enter - ca, \n To view existing accounts, Enter - va")
+                else:
+                    print("Invalid username or password")
                 
             elif short_code == 'ca':
                 print ("Create an account")
