@@ -48,8 +48,8 @@ class TestCredential(unittest.TestCase):
         test_credential = Credential("002","Twitter","@macc254","44444") # A new credential
         test_credential.save_credential()
         
-        found_credential = Credential.get_credential("002")
-        self.assertEqual(test_credential.accountId, found_credential.accountId)
+        found_credential = Credential.get_credential("44444")
+        self.assertEqual(test_credential.accountPassword, found_credential.accountPassword)
         
     
     def test_account_exists(self):

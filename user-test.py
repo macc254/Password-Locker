@@ -37,6 +37,8 @@ class UserTest(unittest.TestCase):
         self.new_user.delete_user()
         self.assertEqual(len(User.user_list),1)
         
+        
+        #########not needed for now and below
     def test_display_user(self):
         '''
         test to display users in the list of users

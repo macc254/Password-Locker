@@ -4,8 +4,7 @@ class Credential:
     '''
     credential_list = [] #empty credentials list  for the accounts
     
-    def __init__(self, accountId, account,accountUsername,accountPassword):
-        self.accountId = accountId
+    def __init__(self,account,accountUsername,accountPassword):
         self.account = account
         self.accountUsername = accountUsername
         self.accountPassword = accountPassword
@@ -27,9 +26,9 @@ class Credential:
         '''
         display_user method displays credentials in the list
         '''
-        return cls.credential_list
-               
-
+        for credential in cls.credential_list:
+            return cls.credential_list
+            
     @classmethod
     def get_credential(cls,number):
         '''
@@ -40,11 +39,11 @@ class Credential:
             Account that matches the number entered
         '''
         for credential in cls.credential_list:
-            if credential.accountId == number:
+            if credential.accountPassword == number:
                 return credential
-            
+            #####nott needed  below
     @classmethod
-    def account_exists(cls,number):
+    def check_credential_exists(cls,number):
         '''
         This is a method that checks an account if it exists in the credential list
         Args: 
@@ -53,7 +52,7 @@ class Credential:
             Boolen: True if the account exists and false if it does not
         '''
         for credential in cls.credential_list:
-            if credential.accountId == number:
+            if credential.accountPassword == number:
                 return True
         return False
     
