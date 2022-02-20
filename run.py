@@ -64,7 +64,7 @@ def check_credential_exists(number):
     
 def main():
     while True:
-            print("Enter these short codes : \n su - To signup a new user,\n lg - To login, \n dc - display credentials,\n fc -find a credential,\n dl - delete a credential,\n ex -exit the Password Locker")
+            print("Enter these short codes : \n su - To signup a new user,\n lg - To login, \n ca - create a new account and save, \n va - To view existing accounts,\n dl - delete a credential,\n ex -exit the Password Locker, \n ")
 
             short_code = input().lower()
 
@@ -118,19 +118,10 @@ def main():
                 else:
                     print("Invalid Credentials")
                     print('\n')
-            else:
-                print("Incorrect. Please choose a valid option.")
-                if short_code == 'dc':
-                    print("Please enter anumber for an account to display")
-                    
-                else:
-                    print("Invalid Credentials")
-                if short_code == 'fc':
-                    print
-                else:
-                    print("Error.Credentials not found")
-                if short_code == 'dl':
-                    print("Enter the number for the credential you want to delete")
+           
+            
+            elif short_code == 'dl':
+                    print("Enter the password for the credential you want to delete")
                     search_number = input()
                     if check_credential_exists(search_number):
                             search_credential = find_credential(search_number)
@@ -138,14 +129,14 @@ def main():
                             print(f"You have deleted one credential from the Credential List")
                             print('\n')
                     else:
-                        print("That credential does not exist")
+                        print("That password does not exist")
                         print('\n')
                 
-                if short_code == 'ex':
-                    print("Bye .......")
-                else:
-                    print("Enter a short code")
-                    break
+            
+            if short_code == 'ex':
+                print("Bye .......")
+                break
+           
             
                 
 
