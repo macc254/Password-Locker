@@ -125,7 +125,7 @@ def main():
                     print("Enter the password for the credential you want to delete")
                     search_number = input()
                     if check_credential_exists(search_number):
-                            search_credential = find_credential(search_number)
+                            search_credential = check_credential_exists(search_number)
                             delete_credential = display_credential().remove(search_credential)
                             print(f"You have deleted one credential from the Credential List")
                             print('\n')
