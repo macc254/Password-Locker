@@ -93,12 +93,23 @@ def main():
                         print ("Create an account:")
                         print ('\n')
                         print ("Enter the Account Name:")
-                        accountname = input()
+                        account = input()
                         print ("Your username is:")
                         accountUsername = loginUsername
                         print ('\n')
                         print ("Enter:\n gp - if you would like a generated password, \n Or ip - if you would like to input your own password")
                         if short_code == 'gp':
+                            passcode = string.ascii_letters
+                            accountPassword = ''.join((random.choice(passcode) for i in range(8)))
+                            print(f"Password: {accountPassword}")
+                        elif short_code == 'ip':
+                            print("Enter your own password")
+                            accountPassword = input()
+                        else:
+                            print("Please enter a valid choice")
+                            save_credential(create_credential(account,accountUsername,accountPassword))
+                            print('\n')
+                            print(f"Account: {account},Username: {accountUsername},Password: {accountPassword}")
                             
 
                         
