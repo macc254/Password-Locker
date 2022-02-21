@@ -82,9 +82,7 @@ def main():
                     print("Password ...")
                     password = input()
                     save_user(create_user(userId,fname,lname, username, password)) # create and save new contact.
-                    print ('\n')
                     print(f"New Password Locker for {fname} {lname} created")
-                    print ('\n')
                     print(f"Name: {fname} {lname} \n Username:{username} \n Password:{password}")
                     print ('\n')
                     
@@ -94,7 +92,7 @@ def main():
                 print ("Enter your password")
                 loginPassword = input()
                 if find_user_by_password(loginPassword):
-                    print (f"Welcome {loginUsername}")
+                    print (f"Welcome to password locker.Login successful!")
                     print ("To create a new account,Enter - ca, \n To view existing accounts, Enter - va")
                 else:
                     print("Invalid username or password")
@@ -110,14 +108,14 @@ def main():
                 print("Enter your own password")
                 accountPassword = input()
                 save_credential(create_credential(account,accountUsername,accountPassword))
-                print(f"Account: {account},Username: {accountUsername},Password: {accountPassword}")
+                print(f"New Account Successfully created \n Account: {account},\n Username: {accountUsername},\n Password: {accountPassword}")
             elif short_code == 'va':
                 print("Here are your accounts:")
-                if get_credential(accountPassword):
+                if display_credential():
                     for credential in display_credential():
                         print(f"Account: {credential.account} Username: {credential.accountUsername} Password: {credential.accountPassword}")
                 else:
-                    print("Invalid Credentials")
+                    print("You have no credentials available")
                     print('\n')
            
             

@@ -33,7 +33,7 @@ To view the live site click on this link:
 https://macc254/github.io/Password-Locker/
 
 ## Licence
-This project is under the [MIT] License
+This project is under the [MIT] (License)
 
 Copyright (c) [2022] [MercyBore]
 
