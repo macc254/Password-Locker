@@ -26,8 +26,7 @@ class Credential:
         '''
         display_user method displays credentials in the list
         '''
-        for credential in cls.credential_list:
-            return cls.credential_list
+        return cls.credential_list
             
     @classmethod
     def get_credential(cls,number):
@@ -43,7 +42,7 @@ class Credential:
                 return credential
             #####nott needed  below
     @classmethod
-    def check_credential_exists(cls,number):
+    def credential_exists(cls,number):
         '''
         This is a method that checks an account if it exists in the credential list
         Args: 

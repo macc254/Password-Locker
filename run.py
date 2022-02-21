@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import random
 import string
+from simple_colors import *
 from user import User
 from credential import Credential
 
@@ -60,16 +61,16 @@ def check_credential_exists(number):
     '''
     Function that check if a credential exists with that number 
     '''
-    return Credential.check_credential_exists(number)
+    return Credential.credential_exists(number)
     
 def main():
     while True:
-            print("Enter these short codes : \n su - To signup a new user,\n lg - To login, \n ca - create a new account and save, \n va - To view existing accounts,\n dl - delete a credential,\n ex -exit the Password Locker, \n ")
+            print(cyan("Enter these short codes : \n su - To signup a new user,\n lg - To login, \n ca - create a new account and save, \n va - To view existing accounts,\n dl - delete a credential,\n ex -exit the Password Locker, \n "))
 
             short_code = input().lower()
 
             if short_code == 'su':
-                    print("New User")
+                    print(magenta("New User"))
                     print("-"*10)
                     print("User Id ...")
                     userId = input()
@@ -92,13 +93,14 @@ def main():
                 print ("Enter your password")
                 loginPassword = input()
                 if find_user_by_password(loginPassword):
-                    print (f"Welcome to password locker.Login successful!")
-                    print ("To create a new account,Enter - ca, \n To view existing accounts, Enter - va")
+                    print(magenta(f"Welcome to password locker.\n Login successful!"))
+                    print(yellow("To create a new account,Enter - ca, \n To view existing accounts, Enter - va"))
+                    print('\n')
                 else:
-                    print("Invalid username or password")
+                    print(red("Invalid username or password"))
                 
             elif short_code == 'ca':
-                print ("Create an account")
+                print (red("Create an account"))
                 print('_' * 10)
                 print ("Enter the Account Name:")
                 account = input()
@@ -109,26 +111,27 @@ def main():
                 accountPassword = input()
                 save_credential(create_credential(account,accountUsername,accountPassword))
                 print(f"New Account Successfully created \n Account: {account},\n Username: {accountUsername},\n Password: {accountPassword}")
+            
             elif short_code == 'va':
-                print("Here are your accounts:")
                 if display_credential():
                     for credential in display_credential():
-                        print(f"Account: {credential.account} Username: {credential.accountUsername} Password: {credential.accountPassword}")
+                        print(f"Here are your Accounts: \n Account: {credential.account} \n Username: {credential.accountUsername} \n Password: {credential.accountPassword}")
+                        print('\n')
                 else:
-                    print("You have no credentials available")
+                    print(red("You have no accounts available"))
                     print('\n')
            
             
             elif short_code == 'dl':
-                    print("Enter the password for the credential you want to delete")
+                    print("Enter the password for the account you want to delete")
                     search_number = input()
                     if check_credential_exists(search_number):
-                            search_credential = check_credential_exists(search_number)
-                            delete_credential = display_credential().remove(search_credential)
-                            print(f"You have deleted one credential from the Credential List")
+                            search_credential = get_credential(search_number)
+                            delete_credential(search_credential)
+                            print(yellow(f"You have deleted one account from the Credential List"))
                             print('\n')
                     else:
-                        print("That password does not exist")
+                        print(red("That account does not exist"))
                         print('\n')
                 
             
